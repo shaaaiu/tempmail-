@@ -1,0 +1,10 @@
+name = "trial-email-frontend"
+main = "worker.js"
+compatibility_date = "2025-11-02"
+
+kv_namespaces = [
+  { binding = "INBOX_KV", id = "your_kv_namespace_id" }
+]
+
+[vars]
+API_KEY = "replace-with-a-strong-secret"
