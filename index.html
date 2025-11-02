@@ -6,15 +6,14 @@
     <title>Trial Email — Ryuushop</title>
     <link rel="stylesheet" href="./style.css" />
     <script>
-      // GANTI ini dengan URL publik Worker kamu, contoh:
-      // window.API_BASE = "https://trial-email-frontend.ryuushop.workers.dev";
-      window.API_BASE = "https://YOUR-WORKER-URL.workers.dev";
+      // sudah otomatis terhubung ke Worker API kamu
+      window.API_BASE = "https://mailapi.alfatharraby5.workers.dev";
     </script>
   </head>
   <body>
     <header class="container">
       <h1>Trial Email (Ryuushop)</h1>
-      <p class="muted">Masukkan nama ➜ pilih domain ➜ buat alamat ➜ lihat inbox. Auto-refresh 5 detik.</p>
+      <p class="muted">Masukkan nama ➜ pilih domain ➜ buat alamat ➜ lihat inbox. Auto-refresh tiap 5 detik.</p>
     </header>
 
     <main class="container card">
@@ -47,7 +46,7 @@
     </main>
 
     <footer class="container foot muted">
-      <small>Demo. Endpoint API: <code id="endpoint-indicator"></code></small>
+      <small>Terhubung ke API: <code id="endpoint-indicator"></code></small>
     </footer>
 
     <script src="./app.js"></script>

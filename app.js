@@ -1,10 +1,10 @@
 const apiBase = (window.API_BASE || location.origin);
 
-// Domain list with @ labels
+// Domain list
 const DOMAINS = [
   { label: "@ryuuxiao.biz.id", value: "ryuuxiao.biz.id" },
   { label: "@ryuushop.web.id", value: "ryuushop.web.id" },
-  { label: "@ryuushop.xyz",    value: "ryuushop.xyz" }
+  { label: "@ryuushop.xyz", value: "ryuushop.xyz" }
 ];
 
 const selDomain = document.getElementById('domain');
@@ -33,23 +33,20 @@ async function createEmail(evt){
   const name = (document.getElementById('name').value || '').trim().toLowerCase();
   const domain = selDomain.value;
   if(!name){ alert('Nama wajib diisi'); return; }
-  // display immediately
   currentEmail = name + '@' + domain;
   addressEl.textContent = currentEmail;
 
-  // call API to ensure inbox exists
   try{
     const res = await fetch(apiBase + '/api/create', {
       method:'POST', headers:{'Content-Type':'application/json'},
       body: JSON.stringify({ name, domain })
     });
-    const d = await res.json();
-    // d.email should match currentEmail
+    await res.json();
     await loadMessages();
     startPolling();
   }catch(e){
     console.error(e);
-    alert('Gagal menghubungi API. Pastikan API_BASE sudah benar.');
+    alert('Gagal menghubungi API.');
   }
 }
 
