@@ -3,20 +3,25 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Trial Email Demo</title>
-    <link rel="stylesheet" href="/style.css" />
+    <title>Trial Email — Ryuushop</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script>
+      // GANTI ini dengan URL publik Worker kamu, contoh:
+      // window.API_BASE = "https://trial-email-frontend.ryuushop.workers.dev";
+      window.API_BASE = "https://YOUR-WORKER-URL.workers.dev";
+    </script>
   </head>
   <body>
     <header class="container">
-      <h1>Trial Email (Demo)</h1>
-      <p class="muted">Masukkan nama ➜ pilih domain ➜ buat alamat ➜ lihat inbox. Auto-refresh tiap 5 detik.</p>
+      <h1>Trial Email (Ryuushop)</h1>
+      <p class="muted">Masukkan nama ➜ pilih domain ➜ buat alamat ➜ lihat inbox. Auto-refresh 5 detik.</p>
     </header>
 
     <main class="container card">
       <form id="create-form" class="grid">
         <div class="field">
           <label for="name">Nama</label>
-          <input id="name" name="name" placeholder="contoh: alice" required />
+          <input id="name" name="name" placeholder="contoh: ryuukece" required />
         </div>
         <div class="field">
           <label for="domain">Domain</label>
@@ -42,9 +47,9 @@
     </main>
 
     <footer class="container foot muted">
-      <small>Demo. Endpoint API: <code>/api/*</code></small>
+      <small>Demo. Endpoint API: <code id="endpoint-indicator"></code></small>
     </footer>
 
-    <script src="/app.js"></script>
+    <script src="./app.js"></script>
   </body>
 </html>
